@@ -1,0 +1,48 @@
+﻿
+<!-- Square card -->
+<style>
+    .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+    }
+
+    .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background: bottom right 15% no-repeat #46B6AC;
+    }
+    .logo-colour {
+        color: #88cc00;
+    }
+</style>
+
+
+@if (Request.IsAuthenticated)
+{
+    <div>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="myPetsController.goToSave()">
+            <i class="material-icons">add</i>
+        </button>
+
+        <div ng-repeat="pet in myPetsController.pets" class="repeated-item" flex="">
+            <div style="float:left;margin: 0 20px 20px 0;" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand" style="background: url({{pet.ImageUrl}}) center center no-repeat; background-size: cover;">
+                    <h2 class="mdl-card__title-text">{{pet.Name}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    {{pet.Description}}
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <i class="material-icons logo-colour">pets</i>
+                    </a>
+                    <a ng-click="myPetsController.goToEdit(pet.ID)" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <i class="material-icons logo-colour">edit</i>
+                    </a>
+                    <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="myPetsController.showDeleteConfirm($event,pet.ID)">
+                        <i class="material-icons logo-colour">delete</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

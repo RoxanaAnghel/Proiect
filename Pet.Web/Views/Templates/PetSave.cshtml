@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = null;
+}
+
+<style>
+
+</style>
+
+
+@if (Request.IsAuthenticated)
+{
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="overflow:hidden">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Create a pet profile</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media">
+                    <img ng-src="{{petSaveController.pet.ImageUrl}}" width="100%" height="auto;"/>
+                    <form name="newPhotosForm" role="form" enctype="multipart/form-data">
+                        <div class="form-group" ng-hide="hasFiles">
+                            <input type="file" id="newPhotos" class="uploadFile" accept="image/*" ngf-select ng-model="file" ng-change="petSaveController.uploadImagine(file)" ngf-multiple="true">
+                        </div>
+                    </form>
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+
+        <md-card-content>
+            <md-input-container>
+                <label>Name</label>
+                <input ng-model="petSaveController.pet.Name">
+            </md-input-container>
+            <br />
+            <md-input-container>
+                <label>Location</label>
+                <input ng-model="petSaveController.pet.Location">
+            </md-input-container>
+            <br />
+            <div flex-gt-xs>
+                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Birth date" md-open-on-focus></md-datepicker>
+            </div>
+            <br />
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea ng-model="petSaveController.pet.Description" maxlength="100" rows="5"> </textarea>
+            </md-input-container>
+            <md-input-container>
+                <md-select layout="row" ng-model="petSaveController.pet.Species">
+                    <md-option value="1"> DOG </md-option>
+                    <md-option value="2"> CAT </md-option>
+                    <md-option value="3"> RODENT </md-option>
+                    <md-option value="4"> FISH </md-option>
+                    <md-option value="5"> REPTILE </md-option>
+                    <md-option value="6"> INSECTS </md-option>
+                    <md-option value="7"> HORSE </md-option>
+                    <md-option value="9"> OTHER </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Color</label>
+                <md-select layout="row" ng-model="petSaveController.pet.Color">
+                    <md-option value="1"> WHITE </md-option>
+                    <md-option value="2"> BLACK </md-option>
+                    <md-option value="3"> BROWN </md-option>
+                    <md-option value="4"> RED </md-option>
+                    <md-option value="5"> GRAY </md-option>
+                    <md-option value="6"> CREAM </md-option>
+                    <md-option value="7"> FAWN </md-option>
+                    <md-option value="9"> BLUE </md-option>
+                </md-select>
+            </md-input-container>
+            <br />
+            <md-input-container>
+                <label>Fur </label>
+                <md-select layout="row" ng-model="petSaveController.pet.FurType">
+                    <md-option value="1"> SMOOTH  </md-option>
+                    <md-option value="2"> WHIRE  </md-option>
+                    <md-option value="3"> BROWN </md-option>
+                    <md-option value="4"> LONG  </md-option>
+                    <md-option value="5"> CURLY  </md-option>
+                    <md-option value="6"> OTHER </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Size </label>
+                <md-select layout="row" ng-model="petSaveController.pet.Size">
+                    <md-option value="1"> NORMAL   </md-option>
+                    <md-option value="2"> SMALL   </md-option>
+                    <md-option value="3"> MEDIUM  </md-option>
+                    <md-option value="4"> LARGE   </md-option>
+                    <md-option value="5"> EXTRALARGE   </md-option>
+                    <md-option value="6"> TOY  </md-option>
+                </md-select>
+            </md-input-container>
+            <br />
+            <div>
+                <md-input-container layout="row">
+                    <label>Pure Breed</label>
+                    <md-select ng-model="petSaveController.pet.PureBreed">
+                        <md-option value="true"> Yes </md-option>
+                        <md-option value="false"> No </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Breed</label>
+                    <input ng-model="petSaveController.pet.Breed">
+                </md-input-container>
+            </div>
+            
+
+
+        </md-card-content>
+
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="petSaveController.save()" class="md-raised">Add pet</md-button>
+            <md-button ng-click="" class="md-raised">Cancel</md-button>
+        </md-card-actions>
+    </md-card>
+
+}
+

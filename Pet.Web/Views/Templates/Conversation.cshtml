@@ -1,0 +1,39 @@
+﻿<style>
+    .listdemoBasicUsage md-divider {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+</style>
+
+@if (Request.IsAuthenticated)
+{
+    <div flex-gt-sm="50" flex>
+        <md-toolbar layout="row" class="md-hue-3">
+            <div class="md-toolbar-tools">
+                <span>{{conversationController.conversation.With}}</span>
+            </div>
+        </md-toolbar>
+
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" ng-model="conversationController.currentText">
+                <label class="mdl-textfield__label">Type new message</label>
+            </div>
+            <md-button class="md-accent md-raised" ng-click="conversationController.sendMessage()">
+                Send
+            </md-button>
+        </form>
+
+        <md-content>
+            <md-list flex>
+                <md-list-item class="md-3-line" ng-repeat="message in conversationController.messages">
+                    <img ng-src="{{conversationController.conversation.WithImagineUrl}}" class="md-avatar" alt="" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ message.ID }}</h3>
+                        <h4>{{ message.Text }}</h4>
+                        <p>{{ message.SentDate }}</p>
+                    </div>
+        </md-content>
+    </div>
+
+}

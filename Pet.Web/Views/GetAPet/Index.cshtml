@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html ng-app="getAPet">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Get a pet</title>
+    @Styles.Render("~/Content/mdl")
+    @Styles.Render("~/angular-material")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .md-button.md-default-theme.md-accent, .md-button.md-accent {
+            color: #88cc00;
+        }
+
+        md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
+            color: #88cc00;
+            background: #88cc00;
+        }
+    </style>
+</head>
+<body>
+    @if (Request.IsAuthenticated)
+    {
+        <md-content class="md-padding">
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-href="#home">Home</md-nav-item>
+                <md-nav-item md-nav-href="#mypets">My Pets</md-nav-item>
+                <md-nav-item md-nav-href="#userconversations">Messages</md-nav-item>
+                <md-nav-item md-nav-href="#profile">Profile</md-nav-item>
+                <md-nav-item md-nav-href="#uploads">Uploads</md-nav-item>
+            </md-nav-bar>
+            <div class="ext-content">
+            </div>
+        </md-content>
+        
+    }
+    @if (!Request.IsAuthenticated)
+    {
+        @Html.Partial("_LoginPartial")
+    }
+    <div class="container body-content">
+        <div ng-view>
+        </div>
+
+        <footer style="clear:both">
+            <hr />
+            <p>&copy; @DateTime.Now.Year - Get a Pet</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/angular")
+    @Scripts.Render("~/module")
+
+    <script src="/Scripts/ng-file-upload-shim.js"></script>
+    <script src="/Scripts/ng-file-upload.js"></script>
+
+    @Scripts.Render("~/AngularControllers")
+</body>
+</html>

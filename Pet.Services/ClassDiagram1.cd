@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pet.Services.Conversations.ConversationService">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAAAQAAIA=</HashCode>
+      <FileName>Conversations\ConversationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Pet.Services.Messages.MessageService">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAEAAAMAAAAAAASAAAAAAAAABAAAAAgCAAAAAAAA=</HashCode>
+      <FileName>Messages\MessageService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Pet.Services.Pet.PetService">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AATAAIAAAAAAIgAAAAAAAAAIAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pet\PetService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Pet.Services.User.UserDetailsService">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\UserDetailsService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Pet.Services.Conversations.IConversationService">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAAAQAAIA=</HashCode>
+      <FileName>Conversations\IConversationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pet.Services.Messages.IMessageService">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAMAAAAAAASAAAAAAAAABAAAAAgCAAAAAAAA=</HashCode>
+      <FileName>Messages\IMessageService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pet.Services.Pet.IPetService">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAIgAAAAAAAAAIAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pet\IPetService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pet.Services.User.IUserDetailsService">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\IUserDetailsService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

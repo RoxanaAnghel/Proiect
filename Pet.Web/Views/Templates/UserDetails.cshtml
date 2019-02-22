@@ -1,0 +1,23 @@
+﻿
+
+@if (Request.IsAuthenticated)
+{
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{userDetailsController.user.Name}} {{userDetailsController.user.Surname}}</span>
+                <span class="md-subhead">{{userDetailsController.user.Description}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media">
+                    <img src="{{userDetailsController.user.ImagineUrl}}" />
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Edit Profile</md-button>
+            <md-button>Settings</md-button>
+        </md-card-actions>
+    </md-card>
+}
+

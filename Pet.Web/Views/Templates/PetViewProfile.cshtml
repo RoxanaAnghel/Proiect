@@ -1,0 +1,57 @@
+﻿<style>
+    .logo-colour {
+        color: #88cc00;
+    }
+    md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+        background-color: #88cc00;
+    }
+</style>
+
+
+<md-dialog aria-label="Pet Profile">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{PetViewController.pet.Name}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" >
+                    
+                </md-button>
+            </div>
+        </md-toolbar>
+
+
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Name: {{PetViewController.pet.Name}} </span>
+                        <span class="md-subhead">Description: {{PetViewController.pet.Description}}</span>
+                        <span class="md-subhead">Location: {{PetViewController.pet.Location}}</span>
+                        <span class="md-subhead">Species: {{PetViewController.pet.Species}}</span>
+                        <span class="md-subhead">Breed: {{PetViewController.pet.Breed}}</span>
+                        <span class="md-subhead">Color: {{PetViewController.pet.MainColour}}</span>
+                        <span class="md-subhead">Fur: {{PetViewController.pet.FurType}}</span>
+                        <span class="md-subhead">Size: {{PetViewController.pet.Size}}</span>
+
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media">
+                            <img src="{{PetViewController.pet.ImageUrl}}" />
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            
+            <md-button ng-click="PetViewController.cancel()">
+                close
+            </md-button>
+            <md-button ng-click="" style="margin-right:20px;">
+                message owner
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

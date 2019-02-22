@@ -1,0 +1,26 @@
+﻿<style>
+   .listdemoBasicUsage md-divider {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+</style>
+
+@if (Request.IsAuthenticated)
+{
+    <h2>All your conversations</h2>
+    <div flex-gt-sm="50" flex>
+        <md-content>
+            <md-list flex>
+                <md-list-item class="md-3-line" ng-repeat="item in conversationsController.userConversations" ng-click="conversationsController.goToConversation(item.ID)">
+                    <img ng-src="{{item.WithImagineUrl}}" class="md-avatar" alt="" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ item.WithName }}</h3>
+                        <h4>{{ item.what }}</h4>
+                        <p>{{ item.SentDate }}</p>
+                    </div>
+                    about <img ng-src="{{item.PetImagineUrl}}" class="md-avatar" />
+                </md-list-item>
+        </md-content>
+    </div>
+}
+

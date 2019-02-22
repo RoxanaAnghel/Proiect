@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Pet.Database.Entities.Conversation>
+
+@{
+    ViewBag.Title = "Conversations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Conversations</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PetOwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetOwnerImagineUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromUserImagineUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetImagineUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("View", "GetMessages", new { id = item.ID })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetOwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetOwnerImagineUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromUserImagineUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetImagineUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("BlockConversation", "BlockConversation", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
